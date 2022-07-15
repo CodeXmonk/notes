@@ -2,7 +2,7 @@ site_name: CodeXmonk notes
 
 theme:
     name: 'material'
-    palette: indigo
+    palette:
 
     # Light mode
     - media: "(prefers-color-scheme: light)"
@@ -16,7 +16,7 @@ theme:
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: pink
+      primary: indigo
       accent: blue
       toggle:
         icon: material/toggle-switch
