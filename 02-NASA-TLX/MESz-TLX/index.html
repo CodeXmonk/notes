@@ -109,37 +109,72 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../..">
-        Obsidian Notes
+        Home
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../contributing/">
+        Contributing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../demo/">
+        Demo
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../options/">
+        Options
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../usage/">
+        Usage
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
           01 HowTo
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="01 HowTo" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
+<label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           01 HowTo
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../01-HowTo/obsidian-publish-mkdocs/">
-        obsidian-publish-mkdocs
+<a class="md-nav__link" href="../../01-HowTo/Installing%20Hugo/">
+        Installing Hugo
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01-HowTo/Installing%20Jekyll/">
+        Installing Jekyll
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01-HowTo/Jekyll%20Garden/">
+        Jekyll Garden.github.io
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01-HowTo/Obsidian%20Publish%20Github%20Pages/">
+        Obsidian Publish Github Pages
       </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
           02 NASA TLX
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="02 NASA TLX" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
+<label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
           02 NASA TLX
         </label>
@@ -176,13 +211,13 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8">
           Features
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Features" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
+<label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
           Features
         </label>
@@ -206,13 +241,13 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9">
           Topic 1
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Topic 1" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
+<label class="md-nav__title" for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
           Topic 1
         </label>
@@ -266,13 +301,29 @@
 <p>6 dimenzió</p>
 <h2 id="jelentoseg">Jelentőség<a class="headerlink" href="#jelentoseg" title="Permanent link">¶</a></h2>
 <p>ezek jelentősége</p>
+<p><vegachart class="vegalite" style="width: 100%">{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple bar chart with embedded data.",
+  "data": {
+    "values": [
+      {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
+      {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
+      {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
+    "y": {"field": "b", "type": "quantitative"}
+  }
+}</vegachart></p>
 </article>
 </div>
 </div>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: obsidian-publish-mkdocs" class="md-footer__link md-footer__link--prev" href="../../01-HowTo/obsidian-publish-mkdocs/" rel="prev">
+<a aria-label="Previous: Obsidian Publish Github Pages" class="md-footer__link md-footer__link--prev" href="../../01-HowTo/Obsidian%20Publish%20Github%20Pages/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -281,7 +332,7 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              obsidian-publish-mkdocs
+              Obsidian Publish Github Pages
             </div>
 </div>
 </a>
@@ -318,9 +369,17 @@
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
 <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+<script src="../../js/mkdocs-charts-plugin.js"></script>
 <script src="../../javascripts/mathjax.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-</body>
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+        <script>
+        var mkdocs_chart_plugin = {'data_path': '', 'use_data_path': 'True', 'vega_theme': 'default', 'vega_theme_dark': 'dark', 'vega_renderer': 'svg', 'vega_width': 'container', 'fallback_width': '800', 'path_to_homepage': '..\\..'}
+        </script>
+        </body>
 </html>
