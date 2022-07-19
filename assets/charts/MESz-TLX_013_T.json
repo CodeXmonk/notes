@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple bar chart with embedded data.",
+    "data": {
+    "values": [
+      {"x": "mentális",     "y": 53, "size": 2306, "color": "rgb(0, 112, 192)" },
+      {"x": "fizikai",      "y": 62,"size": 4011,"color": "rgb(255, 0, 0)" },
+      {"x": "időkényszer",  "y": 51, "size": 1312,   "color": "rgb(255, 255, 255)" },
+      {"x": "teljesítmény", "y": 55, "size": 2851, "color": "rgb(0, 128, 0)" },
+      {"x": "erőfeszítés",  "y": 61,"size": 2409, "color": "rgb(255, 50, 0)" },
+      {"x": "frusztráció",  "y": 51, "size": 2101, "color": "rgb(204, 0, 153)" },
+      {"x": "totál",        "y": 61, "size": 100, "color": "rgb(255, 255, 255)" },
+      {"x": "elégedettség", "y": 48, "size": 100, "color": "rgb(255, 255, 255)" }
+    ]
+  },
+  "mark": {
+    "type": "circle",
+    "opacity": 1.0,
+    "stroke": "black",
+    "strokeWidth": 1
+  },
+  "config": {
+    "legend": {
+      "disable": "true"
+    }
+  },
+  "encoding": {
+    "x": {"field": "x", "type": "nominal", "sort": null, "axis": {"labelAngle": 0} },
+    "y": {"field": "y", "type": "quantitative", "scale": {"domain": [0, 100]} },
+    "size": {"field": "size", "type": "quantitative", "scale": null},
+    "color": {"field": "color", "type": "nominal", "legend": null, "scale":null}
+  }
+}

@@ -1,0 +1,100 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple bar chart with embedded data.",
+    
+    "title": "2. ábra - a terhelések jelentősége",
+  "data": {
+    "values": [{
+      "Dim": "mentális",
+      "color": "rgb(0, 112, 192)",
+      "lower": 0.00,
+      "q1": 13.00,
+      "median": 13.00,
+      "q3": 18.25,
+      "upper": 33.00,
+      "outliers": []
+    },{
+      "Dim": "fizikai",
+      "color": "rgb(255, 0, 0)",
+      "lower": 0.00,
+      "q1": 13.00,
+      "median": 20.00,
+      "q3": 27.00,
+      "upper": 33.00,
+      "outliers": []
+    },{
+      "Dim": "időkényszer",
+      "color": "rgb(255, 255, 255)",
+      "lower": 0.00,
+      "q1": 7.00,
+      "median": 7.00,
+      "q3": 13.00,
+      "upper": 27.00,
+      "outliers": []
+    },{
+      "Dim": "teljesítmény",
+      "color": "rgb(0, 128, 0)",
+      "lower": 7.00,
+      "q1": 20.00,
+      "median": 27.00,
+      "q3": 31.50,
+      "upper": 33.00,
+      "outliers": []
+    },{
+      "Dim": "erőfeszítés",
+      "color": "rgb(255, 50, 00)",
+      "lower": 0.00,
+      "q1": 20.00,
+      "median": 27.00,
+      "q3": 31.50,
+      "upper": 33.00,
+      "outliers": []
+    },{
+      "Dim": "frusztráció",
+      "color": "rgb(204, 0, 153)",
+      "lower": 2.00,
+      "q1": 2.00,
+      "median": 7.00,
+      "q3": 23.50,
+      "upper": 33.00,
+      "outliers": []
+    }]
+  },
+  "encoding": {"x": {"field": "Dim", "type": "nominal", "title": null, "sort": null, "axis": {"labelAngle": 0}}},
+  "layer": [
+    {
+      "mark": {"type": "rule"},
+      "encoding": {
+        "y": {"field": "lower", "type": "quantitative","scale": {"zero": false}, "title": null},
+        "y2": {"field": "upper"}
+      }
+    },
+    {
+        "mark": {
+            "type": "bar",
+            "size": 14,
+            "opacity": 1.0,
+            "stroke": "black",
+            "strokeWidth": 1
+  },
+      "encoding": {
+        "y": {"field": "q1", "type": "quantitative", "scale": {"domain": [0, 40]}},
+        "y2": {"field": "q3"},
+        "color": {"field": "color", "type": "nominal", "legend": null, "scale":null}
+      }
+    },
+    {
+      "mark": {"type": "tick", "color": "black", "size": 28, "thickness": 2 },
+      "encoding": {
+        "y": {"field": "median", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [{"flatten": ["outliers"]}],
+      "mark": {"type": "point", "style": "boxplot-outliers"},
+      "encoding": {
+        "y": {"field": "outliers", "type": "quantitative"}
+      }
+    }
+  ]
+}

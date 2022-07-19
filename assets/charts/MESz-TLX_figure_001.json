@@ -1,0 +1,118 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple bar chart with embedded data.",
+    
+    "title": "1. ábra - a terhelések nagysága",
+  "data": {
+    "values": [{
+      "Dim": "mentális",
+      "color": "rgb(0, 112, 192)",
+      "lower": 35.00,
+      "q1": 67.50,
+      "median": 77.50,
+      "q3": 83.75,
+      "upper": 100,
+      "outliers": []
+    },{
+      "Dim": "fizikai",
+      "color": "rgb(255, 0, 0)",
+      "lower": 65.00,
+      "q1": 81.25,
+      "median": 90,
+      "q3": 93.75,
+      "upper": 100,
+      "outliers": []
+    },{
+      "Dim": "időkényszer",
+      "color": "rgb(255, 255, 255)",
+      "lower": 40.00,
+      "q1": 60.00,
+      "median": 67.50,
+      "q3": 73.75,
+      "upper": 95.00,
+      "outliers": []
+    },{
+      "Dim": "teljesítmény",
+      "color": "rgb(0, 128, 0)",
+      "lower": 30.00,
+      "q1": 61.25,
+      "median": 70.00,
+      "q3": 75.00,
+      "upper": 95.00,
+      "outliers": []
+    },{
+      "Dim": "erőfeszítés",
+      "color": "rgb(255, 50, 00)",
+      "lower": 70.00,
+      "q1": 82.50,
+      "median": 90.00,
+      "q3": 98.75,
+      "upper": 100.00,
+      "outliers": []
+    },{
+      "Dim": "frusztráció",
+      "color": "rgb(204, 0, 153)",
+      "lower": 5.00,
+      "q1": 55.00,
+      "median": 62.50,
+      "q3": 65.00,
+      "upper": 100.00,
+      "outliers": []
+    },{
+      "Dim": "totál",
+      "color": "rgb(255, 255, 255)",
+      "lower": 61.33,
+      "q1": 71.17,
+      "median": 78.17,
+      "q3": 83.83,
+      "upper": 93.00,
+      "outliers": []
+    },{
+      "Dim": "elégedettség",
+      "color": "rgb(255, 255, 255)",
+      "lower": 10.00,
+      "q1": 61.25,
+      "median": 75.00,
+      "q3": 83.75,
+      "upper": 100.00,
+      "outliers": []
+    }]
+  },
+  "encoding": {"x": {"field": "Dim", "type": "nominal", "title": null, "sort": null, "axis": {"labelAngle": 0}}},
+  "layer": [
+    {
+      "mark": {"type": "rule"},
+      "encoding": {
+        "y": {"field": "lower", "type": "quantitative","scale": {"zero": false}, "title": null},
+        "y2": {"field": "upper"}
+      }
+    },
+    {
+        "mark": {
+            "type": "bar",
+            "size": 14,
+            "opacity": 1.0,
+            "stroke": "black",
+            "strokeWidth": 1
+  },
+      "encoding": {
+        "y": {"field": "q1", "type": "quantitative", "scale": {"domain": [0, 110]}},
+        "y2": {"field": "q3"},
+        "color": {"field": "color", "type": "nominal", "legend": null, "scale":null}
+      }
+    },
+    {
+      "mark": {"type": "tick", "color": "black", "size": 14},
+      "encoding": {
+        "y": {"field": "median", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [{"flatten": ["outliers"]}],
+      "mark": {"type": "point", "style": "boxplot-outliers"},
+      "encoding": {
+        "y": {"field": "outliers", "type": "quantitative"}
+      }
+    }
+  ]
+}
