@@ -78,7 +78,7 @@
             "strokeWidth": 1
   },
       "encoding": {
-        "y": {"field": "q1", "type": "quantitative", "scale": {"domain": [0, 40]}},
+        "y": {"field": "q1", "type": "quantitative", "scale": {"domain": [-5, 40]}},
         "y2": {"field": "q3"},
         "color": {"field": "color", "type": "nominal", "legend": null, "scale":null}
       }
