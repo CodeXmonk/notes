@@ -300,43 +300,36 @@
 <h2 id="dimenziok">Dimenziók<a class="headerlink" href="#dimenziok" title="Permanent link">¶</a></h2>
 <p>6 dimenzió</p>
 <h2 id="jelentoseg">Jelentőség<a class="headerlink" href="#jelentoseg" title="Permanent link">¶</a></h2>
-<p>ezek jelentősége</p>
-<p><vegachart class="vegalite" style="width: 100%">{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A simple bar chart with embedded data.",
+<p>ezek jelentősége
+<vegachart class="vegalite" style="width: 100%">{
   "data": {
     "values": [
-      {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
-      {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
-      {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
+      {"x": "mentális",     "y": 80, "size": 1690, "color": "rgb(0, 112, 192)" },
+      {"x": "fizikai",      "y": 100,"size": 10890,"color": "rgb(255, 0, 0)" },
+      {"x": "időkényszer",  "y": 70, "size": 50,   "color": "rgb(255, 255, 255)" },
+      {"x": "teljesítmény", "y": 75, "size": 7290, "color": "rgb(0, 128, 0)" },
+      {"x": "erőfeszítés",  "y": 100,"size": 4000, "color": "rgb(255, 50, 0)" },
+      {"x": "frusztráció",  "y": 60, "size": 490, "color": "rgb(204, 0, 153)" },
+      {"x": "totál",        "y": 88, "size": 100, "color": "rgb(255, 255, 255)" },
+      {"x": "elégedettség", "y": 65, "size": 100, "color": "rgb(255, 255, 255)" }
     ]
   },
-  "mark": "bar",
-  "encoding": {
-    "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
-    "y": {"field": "b", "type": "quantitative"}
-  }
-}</vegachart></p>
-<p><vegachart class="vegalite" style="width: 100%">{
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "description": "A simple bar chart with embedded data.",
-  "width": 360,
-  "data": {
-    "values": [
-      {"a": 1, "b": 2, "c": 3},
-      {"a": 2, "b": 4, "c": 9},
-      {"a": 3, "b": 8, "c": 27},
-      {"a": 4, "b": 16, "c": 81}
-    ]
+  "mark": {
+    "type": "circle",
+    "opacity": 1.0,
+    "stroke": "black",
+    "strokeWidth": 1
   },
-  "transform": [
-    {"fold": ["a", "b", "c"]}
-  ],
-  "mark": "bar",
+  "config": {
+    "legend": {
+      "disable": "true"
+    }
+  },
   "encoding": {
-    "x": {"field": "key", "type": "ordinal"},
-    "y": {"field": "value", "type": "quantitative", "aggregate": "mean"},
-    "tooltip": {"field": "b", "type": "quantitative"}
+    "x": {"field": "x", "type": "nominal", "sort": null, "axis": {"labelAngle": 0} },
+    "y": {"field": "y", "type": "quantitative" },
+    "size": {"field": "size", "type": "quantitative", "scale": null},
+    "color": {"field": "color", "type": "nominal", "legend": null, "scale":null}
   }
 }</vegachart></p>
 </article>

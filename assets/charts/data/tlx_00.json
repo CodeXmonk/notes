@@ -1,0 +1,42 @@
+[
+    {
+       "Dim":"chevrolet chevelle malibu",
+       "Power":18,
+       "Weight":12
+    },
+    {
+       "Dim":"buick skylark 320",
+       "Power":15,
+       "Weight":11.5
+    },
+    {
+       "Dim":"plymouth satellite",
+       "Power":18,
+       "Weight":11
+    },
+    {
+       "Dim":"amc rebel sst",
+       "Power":16,
+       "Weight":12
+    },
+    {
+       "Dim":"ford torino",
+       "Power":17,
+       "Weight":10.5
+    },
+    {
+       "Dim":"ford galaxie 500",
+       "Power":15,
+       "Weight":10
+    },
+    {
+       "Dim":"chevrolet impala",
+       "Power":14,
+       "Weight":9
+    },
+    {
+       "Dim":"plymouth fury iii",
+       "Power":14,
+       "Weight":8.5
+    }
+ ]
