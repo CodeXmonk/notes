@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple bar chart with embedded data.",
+    "data": {"url" : "assets/charts/data/MESz-TLX_013_data.json"},
+  "mark": {
+    "type": "circle",
+    "opacity": 1.0,
+    "stroke": "black",
+    "strokeWidth": 1
+  },
+  "config": {
+    "legend": {
+      "disable": "true"
+    }
+  },
+  "encoding": {
+    "x": {"field": "x", "type": "nominal", "sort": null, "axis": {"labelAngle": 0} },
+    "y": {"field": "y", "type": "quantitative" },
+    "size": {"field": "size", "type": "quantitative", "scale": null},
+    "color": {"field": "color", "type": "nominal", "legend": null, "scale":null}
+  }
+}
