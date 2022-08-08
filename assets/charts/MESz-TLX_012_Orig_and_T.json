@@ -1,0 +1,115 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "datasets": {
+        "data-1": [
+            {"x": "mentális",     "y": 50, "size": 0, "color": "rgb(0, 112, 192)" },
+            {"x": "fizikai",      "y": 80, "size": 7290, "color": "rgb(255, 0, 0)" },
+            {"x": "időkényszer",  "y": 60, "size": 1690, "color": "rgb(255, 255, 255)" },
+            {"x": "teljesítmény", "y": 75, "size": 10890, "color": "rgb(0, 128, 0)" },
+            {"x": "erőfeszítés",  "y": 90, "size": 4000, "color": "rgb(255, 50, 0)" },
+            {"x": "frusztráció",  "y": 30, "size": 490, "color": "rgb(204, 0, 153)" },
+            {"x": "totál",        "y": 74, "size": 100, "color": "rgb(255, 255, 255)" },
+            {"x": "elégedettség", "y": 95, "size": 100, "color": "rgb(255, 255, 255)" }
+        ],
+        "data-2": [
+            {"x": "mentális",     "y": 36, "size": 1048, "color": "rgb(0, 112, 192)", "ci0": 30, "ci1": 70, "ci2": 40, "ci3": 60, "ci4": 0, "ci5": 100, "50": 50 },
+            {"x": "fizikai",      "y": 42, "size": 3339, "color": "rgb(255, 0, 0)", "ci0": 30, "ci1": 70, "ci2": 40, "ci3": 60, "ci4": 0, "ci5": 100, "50": 50 },
+            {"x": "időkényszer",  "y": 45, "size": 2827, "color": "rgb(255, 255, 255)", "ci0": 30, "ci1": 70, "ci2": 40, "ci3": 60, "ci4": 0, "ci5": 100, "50": 50 },
+            {"x": "teljesítmény", "y": 55, "size": 3707, "color": "rgb(0, 128, 0)", "ci0": 30, "ci1": 70, "ci2": 40, "ci3": 60, "ci4": 0, "ci5": 100, "50": 50 },
+            {"x": "erőfeszítés",  "y": 50, "size": 2409, "color": "rgb(255, 50, 0)", "ci0": 30, "ci1": 70, "ci2": 40, "ci3": 60, "ci4": 0, "ci5": 100, "50": 50 },
+            {"x": "frusztráció",  "y": 39, "size": 2101, "color": "rgb(204, 0, 153)", "ci0": 30, "ci1": 70, "ci2": 40, "ci3": 60, "ci4": 0, "ci5": 100, "50": 50 },
+            {"x": "totál",        "y": 47, "size": 100, "color": "rgb(255, 255, 255)", "ci0": 30, "ci1": 70, "ci2": 40, "ci3": 60, "ci4": 0, "ci5": 100, "50": 50 },
+            {"x": "elégedettség", "y": 61, "size": 100, "color": "rgb(255, 255, 255)", "ci0": 30, "ci1": 70, "ci2": 40, "ci3": 60, "ci4": 0, "ci5": 100, "50": 50 }
+        ]
+    },
+    "vconcat": [
+        {
+            "width": "container",
+            "data": {"name": "data-1"},
+            "mark": {
+                "type": "circle",
+                "opacity": 1.0,
+                "stroke": "black",
+                "strokeWidth": 1
+            },
+            "config": {
+                "legend": {
+                    "disable": "true"
+                }
+            },
+            "encoding": {
+                "x": {"field": "x", "type": "nominal", "sort": null, "axis": {"labelAngle": 0, "labels": false}, "title": null },
+                "y": {"field": "y", "type": "quantitative", "scale": {"domain": [0, 100]}, "title": "Personal Data" },
+                "size": {"field": "size", "type": "quantitative", "scale": null},
+                "color": {"field": "color", "type": "nominal", "legend": null, "scale":null}
+            }
+        },
+        {
+            "width": "container",
+            "data": {"name": "data-2"},
+            "layer": [
+                {
+                    "mark": {"type": "errorband", "color": "yellow", "opacity": 0.5},
+                    "encoding": {
+                        "y": {"field": "ci1", "type": "quantitative","title": false, "scale": {"domain": [0, 100]} },
+                        "y2": {"field": "ci0", "type": "quantitative", "scale": {"domain": [0, 100]} }
+                    }
+                },
+                {
+                    "mark": {"type": "errorband", "color": "white", "opacity": 0.5},
+                    "encoding": {
+                        "y": {"field": "ci3", "type": "quantitative","title": false, "scale": {"domain": [0, 100]} },
+                        "y2": {"field": "ci2", "type": "quantitative", "scale": {"domain": [0, 100]} }
+                    }
+                },
+                {
+                    "mark": "rule",
+                    "encoding": {
+                        "y": {"field": "50", "aggregate": "mean"},
+                        "size": {"value": 1}
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "circle",
+                        "opacity": 1.0,
+                        "stroke": "black",
+                        "strokeWidth": 1
+                    },
+                    "config": {
+                        "legend": {
+                            "disable": "true"
+                        }
+                    },
+                    "encoding": {
+                        "x": {"field": "x", "type": "nominal", "sort": null, "axis": {"labelAngle": 0}, "title": "A terhelések dimenziói + Általános elégedettség" },
+                        "y": {"field": "y", "type": "quantitative", "scale": {"domain": [0, 100]}, "title": "T (based on ingroup data)", "axis": {"values": [30, 40, 50, 60, 70]} },
+                        "size": {"field": "size", "type": "quantitative", "scale": null},
+                        "color": {"field": "color", "type": "nominal", "legend": null, "scale":null}
+                    }
+                },
+                {
+                    "width": "container",
+                    "data": {"name": "data-2"},
+                    "mark": {
+                        "type": "circle",
+                        "opacity": 1.0,
+                        "stroke": "black",
+                        "strokeWidth": 1,
+                        "size": 5,
+                        "color": "black"
+                    },
+                    "config": {
+                        "legend": {
+                            "disable": "true"
+                        }
+                    },
+                    "encoding": {
+                        "x": {"field": "x", "type": "nominal", "sort": null, "axis": {"labelAngle": 0}, "title": "A terhelések dimenziói + Általános elégedettség" },
+                        "y": {"field": "y", "type": "quantitative", "scale": {"domain": [0, 100]}, "title": "T (based on ingroup data)" }
+                    }
+                }
+            ]
+        }
+    ]
+}
