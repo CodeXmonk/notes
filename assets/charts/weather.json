@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple bar chart with embedded data.",
+    "data": {"url": "data/weather.csv"},
+
+  "params": [
+
+    {
+
+      "name": "measure",
+
+      "value": "temp_max",
+
+      "bind": {
+
+        "input": "select",
+
+        "options": ["temp_max", "precipitation", "wind"]
+
+      }
+
+    }
+
+  ],
+
+  "transform": [{"calculate": "datum[measure]", "as": "y"}],
+
+  "mark": "line",
+
+  "encoding": {
+
+    "x": {"field": "date", "timeUnit": "month"},
+
+    "y": {"field": "y", "aggregate": "mean"},
+
+    "color": {"field": "location"}
+
+  }
+
+}
